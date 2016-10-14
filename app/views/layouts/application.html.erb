@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>One Month Rails Project</title>
+    <title>My Prayer Team</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,7 @@
 
   <body>
     <%= link_to "Home", root_path %>
+    <%= link_to "About", about_path %>
     <%= link_to "Contact", contact_path %>
     <%= yield %>
   </body>
