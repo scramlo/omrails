@@ -1,2 +1,14 @@
  // Custom bootstrap variables must be set or imported before bootstrap itself.
  @import "bootstrap";
+
+/**
+ * Customizations for MyPrayerTeam.org
+ */
+
+ body {
+   /* Necessary for fixed navbar */
+   margin-top:5rem;
+
+   /* Just because I like it */
+   margin-bottom: 5rem;
+ }
