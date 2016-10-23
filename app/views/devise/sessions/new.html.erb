@@ -6,11 +6,10 @@
   <%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Enter Email" %>
   <small class="form-text text-muted">This will also be your username.</small>
-
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", :type => "password", :class => "form-control", :placeholder => "Password" %>
- </div>
+</div>
+<div class="form-group">
+  <%= f.label :password %><br />
+  <%= f.password_field :password, autocomplete: "off", :type => "password", :class => "form-control", :placeholder => "Password" %>
 </div>
 
 <div class="form-check">
