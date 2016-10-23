@@ -15,3 +15,16 @@ body {
   //Necessary due to fixed-navbar
   padding-top: 4rem;
 }
+
+/**
+ * Alerts
+ */
+
+ //Specifically, devise uses some other class names for errors than bootstrap.
+ //So this mimics bootstrap's styles.
+.alert-alert {
+  //Looks like warning
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+  color: #8a6d3b;
+}
