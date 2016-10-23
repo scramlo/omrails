@@ -1,14 +1,17 @@
- // Custom bootstrap variables must be set or imported before bootstrap itself.
- @import "bootstrap";
+/* ==========================================================================
+   SASS Imports
+   ========================================================================== */
+@import "bootstrap";
+
+/* ==========================================================================
+   SASS Customizations
+   ========================================================================== */
 
 /**
- * Customizations for MyPrayerTeam.org
+ * Global Tags
  */
 
- body {
-   /* Necessary for fixed navbar */
-   margin-top:5rem;
-
-   /* Just because I like it */
-   margin-bottom: 5rem;
- }
+body {
+  //Necessary due to fixed-navbar
+  padding-top: 4rem;
+}
