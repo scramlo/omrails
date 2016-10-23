@@ -8,7 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <% if current_page?('/') && !user_signed_in? %>
+    <body id="public-homepage">
+  <% elsif user_signed_in? %>
+    <body id="user-page">
+  <% else %>
+    <body id="basic-page">
+  <% end %>
     <%= render "layouts/nav.html.erb" %>
     <main class="container">
       <%= render "layouts/flash.html.erb" %>

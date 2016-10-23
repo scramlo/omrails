@@ -1,16 +1,21 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="jumbotron">
-      <h1>Welcome to <em>My Prayer Team!</em></h1>
-      <p class="lead">Share and follow prayer requests between others!</p>
-      <hr class="m-y-md">
-      <p>
-        Grow a following of people to pray for you, your cause, or organization.
-        Join in praying for people, causes, events, and organizations you believe in!
-      </p>
-      <p class="lead">
-        <%= link_to "Learn More", about_path, class: "btn btn-primary btn-lg" %>
-      </p>
+      <% if user_signed_in? %>
+        <h1>Welcome back!</h1>
+      <% else %>
+        <h1>Welcome to <em>My Prayer Team!</em></h1>
+        <p class="lead">Share and follow prayer requests between others!</p>
+        <hr class="m-y-md">
+        <p>
+          Grow a following of people to pray for you, your cause, or organization.
+          Join in praying for people, causes, events, and organizations you believe in!
+        </p>
+        <p class="lead">
+          <%= link_to "Learn More", about_path, class: "btn btn-outline-primary btn-lg" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>

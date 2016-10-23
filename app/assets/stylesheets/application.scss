@@ -18,13 +18,64 @@ body {
 
 /**
  * Alerts
+ * Specifically, devise uses some other class names for errors than bootstrap.
+ * So this mimics bootstrap's styles.
  */
 
- //Specifically, devise uses some other class names for errors than bootstrap.
- //So this mimics bootstrap's styles.
 .alert-alert {
-  //Looks like warning
+  //Looks like alert-warning
   background-color: #fcf8e3;
   border-color: #faf2cc;
   color: #8a6d3b;
 }
+
+.alert-notice {
+  //Looks like alert-info
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f;
+}
+
+/**
+ * Homepage only
+ */
+ #public-homepage {
+   background:url("http://nerdspecs.com/static/omrails/bg-min-2.jpg");
+   background-size: cover;
+ }
+
+ /**
+  * Basic Pages Only
+  */
+
+#basic-page, #user-page {
+  background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/60degree_gray.png");
+}
+
+ /**
+  * Jumbotron
+  */
+
+  .jumbotron {
+    background:rgba(255,255,255,0.7)
+  }
+
+/**
+ * Media Queries
+ */
+
+//tablets and under (Medium)
+@media (max-width: 991px) {
+
+  //styling mobile menu
+  nav:first-of-type div.container {
+    padding:0;
+  }
+
+  nav:first-of-type div ul li {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+  }
+
+} //End Media Queries

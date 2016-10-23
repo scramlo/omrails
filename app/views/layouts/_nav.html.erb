@@ -1,10 +1,19 @@
-<nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
-  <div class="container">
-    <span class="navbar-brand">&#10050;</span>
+<nav class="navbar navbar-dark bg-inverse navbar-fixed-top text-xs-right">
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div id="navbarResponsive" class="container collapse navbar-toggleable-md text-xs-center">
+    <span class="navbar-brand hidden-md-down">&#10050;</span>
     <ul class="nav navbar-nav">
       <%= nav_link_to "Home", root_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
-      <%= nav_link_to "About", about_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
-      <%= nav_link_to "Contact", contact_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
+      <% if user_signed_in? %>
+        <%= nav_link_to "Account".html_safe, edit_user_registration_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
+        <li class="nav-item float-lg-right">
+          <%= link_to('Logout', destroy_user_session_path, :class=> "nav-link", :method => :delete) %>
+        </li>
+      <% else %>
+        <%= nav_link_to "About", about_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
+        <%= nav_link_to "Contact", contact_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
+        <%= nav_link_to "Login", new_user_session_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item float-lg-right"} %>
+      <% end %>
     </ul>
   </div>
 </nav>
