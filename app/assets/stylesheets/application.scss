@@ -1,6 +1,7 @@
 /* ==========================================================================
    SASS Imports
    ========================================================================== */
+@import "myprayerteam";
 @import "bootstrap";
 
 /* ==========================================================================
@@ -52,14 +53,6 @@ body {
 #basic-page, #user-page {
   background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/60degree_gray.png");
 }
-
- /**
-  * Jumbotron
-  */
-
-  .jumbotron {
-    background:rgba(255,255,255,0.7)
-  }
 
 /**
  * Media Queries
