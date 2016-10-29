@@ -13,29 +13,9 @@
  */
 
 body {
-  //Necessary due to fixed-navbar
-  padding-top: 4rem;
-  padding-bottom:4rem;
-}
-
-/**
- * Alerts
- * Specifically, devise uses some other class names for errors than bootstrap.
- * So this mimics bootstrap's styles.
- */
-
-.alert-alert {
-  //Looks like alert-warning
-  background-color: #fcf8e3;
-  border-color: #faf2cc;
-  color: #8a6d3b;
-}
-
-.alert-notice {
-  //Looks like alert-info
-  background-color: #d9edf7;
-  border-color: #bcdff1;
-  color: #31708f;
+  //Necessary due to fixed-navbar and paper card thing
+  padding-top: 6rem;
+  padding-bottom:6rem;
 }
 
 /**
@@ -51,7 +31,42 @@ body {
   */
 
 #basic-page, #user-page {
-  background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/60degree_gray.png");
+  background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/purty_wood.png");
+}
+
+.shadow-paper {
+  background:white;
+  border-radius: $border-radius-lg;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png");
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  transform: rotate(-2deg);
+}
+
+/**
+ * Alerts
+ * Specifically, devise uses some other class names for errors than bootstrap.
+ * So this mimics bootstrap's styles.
+ */
+
+ //Just to make a thicker border
+ .alert {
+   border: 2.5px solid transparent;
+ }
+
+.alert-alert {
+  //Looks like alert-warning
+  background-color: $brand-warning;
+  border-color: darken($brand-warning, 15%);
+  color: $gray-lightest;
+}
+
+.alert-notice {
+  //Looks like alert-info
+  background-color: $brand-info;
+  border-color: darken($brand-info, 15%);
+  color: $gray-dark;
 }
 
 /**
@@ -72,4 +87,13 @@ body {
     border-bottom:1px solid rgba(255,255,255,0.5);
   }
 
-} //End Media Queries
+} //End Medium Media Queries
+
+@media (max-width: 480px) {
+  //No paper rotation for mobile
+  .shadow-paper {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+  }
+}
