@@ -35,13 +35,26 @@ body {
 }
 
 .shadow-paper {
+  border:0;
   background:white;
-  border-radius: $border-radius-lg;
+  border-radius: 0rem 0rem .3rem .3rem;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
   background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png");
   -ms-transform: rotate(-2deg); /* IE 9 */
   -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
   transform: rotate(-2deg);
+}
+
+.shadow-paper .card-header {
+  background: rgba(0, 41, 19, 0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  border-radius: 0;
+}
+
+.shadow-paper .card-header h1, .shadow-paper .cardheader h2 {
+  text-align: center;
+  text-shadow: 1px 1px 1.2px black;
+  color: white;
 }
 
 /**
