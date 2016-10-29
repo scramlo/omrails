@@ -12,6 +12,7 @@
       <% else %>
         <%= nav_link_to "About", about_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
         <%= nav_link_to "Contact", contact_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
+        <%= nav_link_to "Sign Up", signup_path, {:class => "btn btn-primary"}, {:wrapper => "li", :wrapper_class => "nav-item float-lg-right"} %>
         <%= nav_link_to "Login", login_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item float-lg-right"} %>
       <% end %>
     </ul>
