@@ -18,10 +18,10 @@
           Grow a following of people to pray for you, your cause, or organization.
           Join in praying for people, causes, events, and organizations you believe in!
         </p>
-        <p class="lead">
-          <%= link_to "Learn More", about_path, class: "btn btn-primary btn-lg" %>
-          <%= link_to "Sign Up", signup_path, class: "btn btn-warning btn-lg" %>
-        </p>
+          <%= link_to "Learn More", about_path, class: "hidden-sm-down btn btn-primary btn-lg" %>
+          <%= link_to "Sign Up", signup_path, class: "hidden-sm-down btn btn-warning btn-lg" %>
+          <%= link_to "Learn More", about_path, class: "hidden-md-up btn btn-primary" %>
+          <%= link_to "Sign Up", signup_path, class: "hidden-md-up btn btn-warning" %>
       <% end %>
     </div>
     </div>
