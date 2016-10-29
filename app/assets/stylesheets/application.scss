@@ -3,6 +3,7 @@
    ========================================================================== */
 @import "myprayerteam";
 @import "bootstrap";
+@import "font-awesome";
 
 /* ==========================================================================
    SASS Customizations
@@ -14,16 +15,17 @@
 
 body {
   //Necessary due to fixed-navbar and paper card thing
-  padding-top: 6rem;
-  padding-bottom:6rem;
+  padding-top: 5rem;
+  padding-bottom:5rem;
 }
 
 /**
  * Homepage only
  */
  #public-homepage {
-   background:url("http://nerdspecs.com/static/omrails/bg-min-2.jpg");
-   background-size: cover;
+   //background:url("http://nerdspecs.com/static/omrails/bg-min-2.jpg");
+   //background-size: cover;
+   background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/purty_wood.png");
  }
 
  /**
@@ -40,18 +42,19 @@ body {
   border-radius: 0rem 0rem .3rem .3rem;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
   background:url("https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png");
-  -ms-transform: rotate(-2deg); /* IE 9 */
-  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
-  transform: rotate(-2deg);
+  //-ms-transform: rotate(-2deg); /* IE 9 */
+  //-webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  //transform: rotate(-2deg);
 }
 
 .shadow-paper .card-header {
   background: rgba(0, 41, 19, 0.5);
-  border-bottom: 1px solid rgba(0,0,0,0.5);
   border-radius: 0;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.9);
+  border-bottom:0.5px solid rgba(0,0,0,0.5);
 }
 
-.shadow-paper .card-header h1, .shadow-paper .cardheader h2 {
+.shadow-paper .card-header h1, .shadow-paper .card-header h2 {
   text-align: center;
   text-shadow: 1px 1px 1.2px black;
   color: white;
@@ -103,10 +106,5 @@ body {
 } //End Medium Media Queries
 
 @media (max-width: 480px) {
-  //No paper rotation for mobile
-  .shadow-paper {
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-    transform: rotate(0deg);
-  }
+
 }

@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Custom Gems
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'nav_lynx'
+gem 'font-awesome-rails', '~> 4.7'
 gem 'devise', '~> 4.2'
 
 group :development, :test do

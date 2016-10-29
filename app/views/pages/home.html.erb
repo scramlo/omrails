@@ -1,10 +1,17 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="jumbotron">
+    <div class="card shadow-paper">
+      <div class="card-header">
       <% if user_signed_in? %>
         <h1>Welcome back!</h1>
+      </div>
+      <div class="card-block">
+        You rock.
+      </div>
       <% else %>
         <h1>Welcome to <em>My Prayer Team!</em></h1>
+      </div>
+      <div class="card-block">
         <p class="lead">Share and follow prayer requests between others!</p>
         <hr class="m-y-md">
         <p>
@@ -16,6 +23,7 @@
           <%= link_to "Sign Up", signup_path, class: "btn btn-warning btn-lg" %>
         </p>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
