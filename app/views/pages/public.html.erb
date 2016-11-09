@@ -1,0 +1,29 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Listing All Prayers</h2>
+      <% @prayers.each do |prayer|%>
+        <div class="card shadow-paper">
+          <div class="card-header ">
+            <%= prayer.user.email %>
+            <span class="float-xs-right"><%= prayer.updated_at.strftime("%A, %B %d") %></span>
+          </div>
+          <div class="card-block">
+            <q class="blockquote">
+              <%= prayer.body %>
+            </q>
+            <hr>
+            <%= link_to raw("<i class='fa fa-eye'></i> View"), prayer_path(prayer), class: "btn btn-primary" %>
+            <% if current_user.id != prayer.user.id  %>
+              <% if current_user.following?(prayer.user) %>
+                <%= link_to "Unfollow", unfollow_user_path(prayer.user.id), method: :delete, class: "btn btn-danger" %>
+              <% else %>
+                <%= link_to raw("<i class='fa fa-plus'></i> Follow"), follow_user_path(prayer.user.id), method: :post, class: "btn btn-success" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

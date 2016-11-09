@@ -3,10 +3,8 @@
     <div class="card shadow-paper">
       <div class="card-header">
       <% if user_signed_in? %>
-        <h1>Welcome back!</h1>
-      </div>
-      <div class="card-block">
-        You rock.
+        <h1>Prayer Feed</h1>
+        You are following <%= current_user.follow_count %> people.
       </div>
       <% else %>
         <h1>Welcome to <em>My Prayer Team!</em></h1>
@@ -27,3 +25,27 @@
     </div>
   </div>
 </div>
+
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-xs-12">
+      <% @prayers.each do |prayer|%>
+        <% if current_user.following?(prayer.user) %>
+          <div class="card shadow-paper">
+            <div class="card-header ">
+              <%= prayer.user.email %>
+            </div>
+            <div class="card-block">
+              <q class="blockquote">
+                <%= prayer.body %>
+              </q>
+              <hr>
+              <%= link_to "View", prayer_path(prayer), class: "btn btn-primary" %>
+              <%= link_to "Unfollow", unfollow_user_path(prayer.user.id), method: :delete, class: "btn btn-danger" %>
+            </div>
+          </div>
+        <% end #end if user is following %>
+      <% end #end block%>
+    </div>
+  </div>
+<% end %>
