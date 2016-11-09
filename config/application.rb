@@ -12,5 +12,6 @@ module Omrails
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.nav_lynx.selected_class = 'active'
+    config.app_generators.scaffold_controller = :scaffold_controller
   end
 end
