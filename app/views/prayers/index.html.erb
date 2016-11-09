@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card shadow-paper">
+      <div class="card-header">
+        <h1>My Prayers</h1>
+      </div>
+      <div class="card-block">
+
+        <% @prayers.each do |prayer| %>
+          <%= link_to prayer.body, prayer %>
+          <span class="float-md-right">
+            <%= link_to 'Edit', edit_prayer_path(prayer), :class => "btn btn-primary btn-sm" %>
+            <%= link_to 'Destroy', prayer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+          </span>
+          <% if prayer != @prayers.last %>
+            <hr>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+    <%= link_to 'New Prayer', new_prayer_path %>
+  </div>
+</div>

@@ -23,4 +23,5 @@ ActiveAdmin.register User do
       f.submit
     end
   end
+  
 end

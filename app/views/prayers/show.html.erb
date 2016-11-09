@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card shadow-paper">
+      <div class="card-header">
+      </div>
+      <div class="card-block">
+
+        <q class="blockquote">
+          <%= @prayer.body %>
+        </q>
+      </div>
+      <p class="p-1">
+        <% if @prayer.answered == false %>
+          <em class="text-muted">Currently Unanswered</em>
+        <% else %>
+          <em class="text-warning">Answered!</em>
+        <% end %>
+        <em class="hidden-sm-down text-muted pull-right">
+          Updated: <%= @prayer.updated_at.strftime("%A, %B %d") %>
+        </em>
+        <em class="hidden-md-up text-muted">
+          <br>
+          Updated: <%= @prayer.updated_at.strftime("%A, %B %d") %>
+        </em>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to 'Edit', edit_prayer_path(@prayer) %> |
+    <%= link_to 'Back', prayers_path %>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Comment as <%= current_user.email %></h2>
+    <%= form_for([@prayer, @prayer.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.text_area :body, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Submit", :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<% if @prayer.comments.count != 0 %>
+  <div class="row">
+    <div class="col-xs-12">
+      <% @prayer.comments.each do |comment| %>
+        <% if comment.user_id != nil %>
+          <div class="card shadow-paper">
+            <div class="card-header">
+            </div>
+            <div class="card-block">
+
+              <p class="lead">
+                <%= comment.body %>
+              </p>
+            </div>
+            <p class="p-1">
+              <em class="text-muted"><%= User.find_by(id:comment.user_id).email %></em>
+              <em class="hidden-sm-down text-muted pull-right">
+                <%= comment.updated_at %>
+              </em>
+              <em class="hidden-md-up text-muted">
+                <br>
+                <%= comment.updated_at %>
+              </em>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

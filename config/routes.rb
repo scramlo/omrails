@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :prayers
   ActiveAdmin.routes(self)
   devise_for :users
+
+  resources :prayers do
+    resources :comments
+  end
 
   as :user do
     get "login" => "devise/sessions#new"

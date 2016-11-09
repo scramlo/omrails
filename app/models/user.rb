@@ -12,4 +12,7 @@ class User < ApplicationRecord
     end
   end
 
+  has_many :prayers
+  has_many :comments
+  
 end

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card shadow-paper">
+      <div class="card-header">
+        <h1>Create Prayer</h1>
+      </div>
+      <div class="card-block">
+
+        <%= form_for(prayer) do |f| %>
+          <% if prayer.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(prayer.errors.count, "error") %> prohibited this prayer from being saved:</h2>
+
+              <ul>
+              <% prayer.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <label for="prayer[body]">Prayer</label>
+            <%= f.text_field :body, :class => "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check-label">
+              <%= f.check_box :answered, :class => "form-check-input" %>
+              Answered?
+            </label>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Submit", :class => "btn btn-primary" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
