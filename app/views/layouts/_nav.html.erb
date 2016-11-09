@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
-  <span class="navbar-brand hidden-lg-up"><i class="fa fa-comments-o"></i> My Prayer Team</span>
-  <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <span class="navbar-brand hidden-lg-up float-xs-right">My Prayer Team <i class="fa fa-comments-o"></i></span>
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
   <div id="navbarResponsive" class="container collapse navbar-toggleable-md text-xs-center">
     <span class="navbar-brand hidden-md-down"><i class="fa fa-comments-o"></i></span>
     <ul class="nav navbar-nav">
@@ -13,8 +13,10 @@
       <% else %>
         <%= nav_link_to "About", about_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
         <%= nav_link_to "Contact", contact_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item"} %>
-        <%= nav_link_to "Sign Up", signup_path, {:class => "btn btn-warning"}, {:wrapper => "li", :wrapper_class => "nav-item float-lg-right"} %>
-        <%= nav_link_to "Login", login_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "nav-item float-lg-right"} %>
+        <%= nav_link_to "Sign Up", signup_path, {:class => "btn btn-warning"}, {:wrapper => "li", :wrapper_class => "hidden-md-down nav-item float-lg-right"} %>
+        <%= nav_link_to "Login", login_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "hidden-md-down nav-item float-lg-right"} %>
+        <%= nav_link_to "Login", login_path, {:class => "nav-link"}, {:wrapper => "li", :wrapper_class => "hidden-lg-up nav-item"} %>
+        <%= nav_link_to "Sign Up", signup_path, {:class => "btn btn-warning"}, {:wrapper => "li", :wrapper_class => "hidden-lg-up nav-item"} %>
       <% end %>
     </ul>
   </div>
